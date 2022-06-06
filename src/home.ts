@@ -1,3 +1,4 @@
+//remover o import que será criado no js após o build
 import bootstrap from 'bootstrap';
 
 
