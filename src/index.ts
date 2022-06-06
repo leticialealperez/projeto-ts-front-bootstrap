@@ -37,17 +37,17 @@ function verificarCampos(): void {
     if (inputNome.value === '' || inputNome.value.length < 3) {
         inputNome.focus();
         inputNome.value = '';
-        inputNome.setAttribute('style', 'outline-color: red');
+        inputNome.setAttribute('style', 'outline-color: red; outline-style: solid; outline-width: thin;');
 
     } else if (inputEmail.value === '' || inputEmail.value.length < 10) {
         inputEmail.focus();
         inputEmail.value = '';
-        inputEmail.setAttribute('style', 'outline-color: red');
+        inputEmail.setAttribute('style', 'outline-color: red; outline-style: solid; outline-width: thin;');
 
     } else if (inputSenha.value === '' || inputSenha.value.length < 8) {
         inputSenha.focus();
         inputSenha.value = '';
-        inputSenha.setAttribute('style', 'outline-color: red');
+        inputSenha.setAttribute('style', 'outline-color: red; outline-style: solid; outline-width: thin;');
 
     } else {
         inputEmail.removeAttribute('style');
