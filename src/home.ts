@@ -6,7 +6,7 @@ let inputDescricao = document.querySelector('#input-descricao') as HTMLInputElem
 let inputDetalhamento = document.querySelector('#input-detalhamento') as HTMLInputElement;
 let tabelaRecados = document.querySelector('#container-registros') as HTMLDivElement;
 const myModal = new bootstrap.Modal('#transaction-modal');
-
+const btnSair = document.querySelector('#button-logout') as HTMLButtonElement;
 interface Recado {
     codigo: number,
     descricao: string,
@@ -17,6 +17,8 @@ let usuarioLogado: string | null = sessionStorage.getItem('usuarioLogado');
 
 
 //EVENTOS
+btnSair.addEventListener('click', sair);
+
 document.addEventListener('DOMContentLoaded', () => {
     if (!usuarioLogado) {
         alert("Você precisa estar logado para acessar essa página!");
@@ -193,4 +195,9 @@ function buscarRecadosNoStorage(): Recado[] {
 
 function editarRecado(codigo: number) {
     alert(`Editar recado ${codigo}?`);
+}
+
+function sair() {
+    sessionStorage.removeItem('usuarioLogado');
+    window.location.href = 'index.html';
 }

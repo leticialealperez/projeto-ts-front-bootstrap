@@ -7,8 +7,10 @@ let inputDescricao = document.querySelector('#input-descricao');
 let inputDetalhamento = document.querySelector('#input-detalhamento');
 let tabelaRecados = document.querySelector('#container-registros');
 const myModal = new bootstrap.Modal('#transaction-modal');
+const btnSair = document.querySelector('#button-logout');
 let usuarioLogado = sessionStorage.getItem('usuarioLogado');
 //EVENTOS
+btnSair.addEventListener('click', sair);
 document.addEventListener('DOMContentLoaded', () => {
     if (!usuarioLogado) {
         alert("Você precisa estar logado para acessar essa página!");
@@ -141,4 +143,8 @@ function buscarRecadosNoStorage() {
 }
 function editarRecado(codigo) {
     alert(`Editar recado ${codigo}?`);
+}
+function sair() {
+    sessionStorage.removeItem('usuarioLogado');
+    window.location.href = 'index.html';
 }
