@@ -1,4 +1,4 @@
-
+"use strict";
 // CAPTURAR OS DADOS NECESSARIOS DA DOM
 // ELEMENTO HTML E CRIAR AS VARIAVEIS QUE IRÃO ARMAZENAR ESSES DADOS
 const formulario = document.querySelector("#formulario-cadastro");

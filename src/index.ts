@@ -37,33 +37,41 @@ function verificarCampos(): void {
     if (inputNome.value === '' || inputNome.value.length < 3) {
         inputNome.focus();
         inputNome.value = '';
-        inputNome.setAttribute('style', 'outline-color: red; outline-style: solid; outline-width: thin;');
+        inputNome.setAttribute('style', 'outline: thin solid red;');
 
-    } else if (inputEmail.value === '' || inputEmail.value.length < 10) {
-        inputEmail.focus();
-        inputEmail.value = '';
-        inputEmail.setAttribute('style', 'outline-color: red; outline-style: solid; outline-width: thin;');
+    } else
 
-    } else if (inputSenha.value === '' || inputSenha.value.length < 8) {
-        inputSenha.focus();
-        inputSenha.value = '';
-        inputSenha.setAttribute('style', 'outline-color: red; outline-style: solid; outline-width: thin;');
+        if (inputEmail.value === '' || inputEmail.value.length < 10) {
+            inputEmail.focus();
+            inputEmail.value = '';
+            inputEmail.setAttribute('style', 'outline: thin solid red;');
 
-    } else {
-        inputEmail.removeAttribute('style');
-        inputSenha.removeAttribute('style');
+        } else
 
-        let novoUsuario: Usuario = {
-            nome: inputNome.value,
-            login: inputEmail.value,
-            senha: inputSenha.value,
-            recados: []
-        }
+            if (inputSenha.value === '' || inputSenha.value.length < 8) {
+                inputSenha.focus();
+                inputSenha.value = '';
+                inputSenha.setAttribute('style', 'outline: thin solid red;');
 
-        formularioCadastro.reset();
-        cadastrarUsuario(novoUsuario);
-    }
+            } else {
+                inputNome.removeAttribute('style');
+                inputEmail.removeAttribute('style');
+                inputSenha.removeAttribute('style');
+
+                let novoUsuario: Usuario = {
+                    nome: inputNome.value,
+                    login: inputEmail.value,
+                    senha: inputSenha.value,
+                    recados: []
+                }
+
+                formularioCadastro.reset();
+                cadastrarUsuario(novoUsuario);
+            }
+
+
 }
+
 
 function cadastrarUsuario(novoUsuario: Usuario): void {
 

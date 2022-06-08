@@ -1,7 +1,3 @@
-//remover o import que será criado no js após o build
-import bootstrap from 'bootstrap';
-
-
 // CAPTURAR OS DADOS NECESSARIOS DA DOM
 // ELEMENTO HTML E CRIAR AS VARIAVEIS QUE IRÃO ARMAZENAR ESSES DADOS
 const formulario = document.querySelector("#formulario-cadastro") as HTMLFormElement;
@@ -11,17 +7,10 @@ let inputDetalhamento = document.querySelector('#input-detalhamento') as HTMLInp
 let tabelaRecados = document.querySelector('#container-registros') as HTMLDivElement;
 const myModal = new bootstrap.Modal('#transaction-modal');
 
-type Recado = {
+interface Recado {
     codigo: number,
     descricao: string,
     detalhamento: string,
-}
-
-type Usuario = {
-    nome: string;
-    login: string;
-    senha: string;
-    recados: Array<Recado>
 }
 
 let usuarioLogado: string | null = sessionStorage.getItem('usuarioLogado');

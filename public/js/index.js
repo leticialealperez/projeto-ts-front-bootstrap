@@ -22,19 +22,20 @@ function verificarCampos() {
     if (inputNome.value === '' || inputNome.value.length < 3) {
         inputNome.focus();
         inputNome.value = '';
-        inputNome.setAttribute('style', 'outline-color: red; outline-style: solid; outline-width: thin;');
+        inputNome.setAttribute('style', 'outline: thin solid red;');
     }
     else if (inputEmail.value === '' || inputEmail.value.length < 10) {
         inputEmail.focus();
         inputEmail.value = '';
-        inputEmail.setAttribute('style', 'outline-color: red; outline-style: solid; outline-width: thin;');
+        inputEmail.setAttribute('style', 'outline: thin solid red;');
     }
     else if (inputSenha.value === '' || inputSenha.value.length < 8) {
         inputSenha.focus();
         inputSenha.value = '';
-        inputSenha.setAttribute('style', 'outline-color: red; outline-style: solid; outline-width: thin;');
+        inputSenha.setAttribute('style', 'outline: thin solid red;');
     }
     else {
+        inputNome.removeAttribute('style');
         inputEmail.removeAttribute('style');
         inputSenha.removeAttribute('style');
         let novoUsuario = {
